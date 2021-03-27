@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.arsenbasha.kotlin.R
@@ -31,26 +29,41 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val path = "android.resource://" + activity?.packageName + "/" + R.raw.video
-        val video =homeBinding.video
-        video.setVideoURI(Uri.parse(path))
-        val play=homeBinding.play
-        val pause=homeBinding.pausa
+        val video = homeBinding.video
 
-
+        video.setVideoURI(Uri.parse(ruta()))
+        val play = homeBinding.play
+        val pause = homeBinding.pausa
+        val stop = homeBinding.stop
+        var isstop = true
+        ruta()
+        stop.setOnClickListener {
+            video.stopPlayback()
+            video.seekTo(0)
+            pause.visibility = View.INVISIBLE
+            play.visibility = View.VISIBLE
+            isstop = true
+        }
         play.setOnClickListener {
-            video.start()
-            play.visibility=View.INVISIBLE
-
+            if (isstop) {
+                video.setVideoURI(Uri.parse(ruta()))
+                isstop = false
+                video.start()
+            } else {
+                video.start()
+            }
+            play.visibility = View.INVISIBLE
             pause.visibility = View.VISIBLE
+
         }
         pause.setOnClickListener {
             video.pause()
-            pause.visibility=View.INVISIBLE
-
+            pause.visibility = View.INVISIBLE
             play.visibility = View.VISIBLE
-
         }
     }
+
+    private fun  ruta(): String = "android.resource://" + activity?.packageName + "/" + R.raw.video
+
 
 }
