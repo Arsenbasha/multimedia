@@ -9,69 +9,53 @@
         android:id="@+id/video"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:layout_below="@+id/title"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="15dp" />
 
+
+
+    <ImageButton
+        android:id="@+id/play"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/video"
+        android:layout_alignLeft="@id/video"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/play_24" />
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/pelicula" />
-
-
-    <LinearLayout
-        android:id="@+id/play"
+        android:id="@+id/playtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/video"
-        android:layout_alignLeft="@id/video"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/play"
+        android:layout_toRightOf="@id/play"
+        android:text="Reproducir"
+        android:textSize="20sp" />
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/play_24"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Reproducir"
-            android:textSize="20sp"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/pausa"
+
+    <ImageButton
+        android:id="@+id/pause"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/video"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="11dp"
+        android:layout_toLeftOf="@id/pausetxt"
+        android:src="@drawable/pause_24" />
+
+    <TextView
+        android:id="@+id/pausetxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/video"
-        android:visibility="invisible"
-        android:layout_alignLeft="@id/video"
-        android:orientation="horizontal">
-
-        <ImageView
-
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/pause_24"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:text="Pausar"
-            android:textSize="20sp"
-            />
-    </LinearLayout>
-
-
-
-
+        android:layout_alignEnd="@id/video"
+        android:layout_alignRight="@id/video"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Pausar"
+        android:textSize="20sp" />
 </RelativeLayout>
