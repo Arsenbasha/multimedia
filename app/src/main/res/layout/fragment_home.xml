@@ -9,53 +9,79 @@
         android:id="@+id/video"
         android:layout_width="400dp"
         android:layout_height="400dp"
+        android:layout_below="@+id/title"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="10dp" />
 
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/pelicula" />
 
-    <ImageButton
+
+    <LinearLayout
         android:id="@+id/play"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/video"
         android:layout_alignLeft="@id/video"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/play_24" />
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_alignStart="@id/video">
 
-    <TextView
-        android:id="@+id/playtxt"
+        <TextView
+            android:id="@+id/playtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/play_24"
+            android:contentDescription="@string/play" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:text="@string/play"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pausa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/video"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_toEndOf="@id/play"
-        android:layout_toRightOf="@id/play"
-        android:text="Reproducir"
-        android:textSize="20sp" />
+        android:layout_alignLeft="@id/video"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        android:layout_alignStart="@id/video">
+
+        <TextView
+            android:id="@+id/pausatxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pause_24"
+            android:contentDescription="@string/pause" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/pause"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 
-    <ImageButton
-        android:id="@+id/pause"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_below="@id/video"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="11dp"
-        android:layout_toLeftOf="@id/pausetxt"
-        android:src="@drawable/pause_24" />
-
-    <TextView
-        android:id="@+id/pausetxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/video"
-        android:layout_alignEnd="@id/video"
-        android:layout_alignRight="@id/video"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:text="Pausar"
-        android:textSize="20sp" />
 </RelativeLayout>
