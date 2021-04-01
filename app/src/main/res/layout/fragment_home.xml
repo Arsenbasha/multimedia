@@ -12,14 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <VideoView
+        <RelativeLayout
             android:id="@+id/video"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:layout_below="@+id/title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title">
+
+            <ImageView
+                android:id="@+id/status"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_centerVertical="true"
+                android:translationZ="5dp"
+                android:src="@drawable/play_24"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/play" />
+
+            <VideoView
+                android:id="@+id/videoNav"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp" />
+
+        </RelativeLayout>
 
 
         <TextView
@@ -27,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:textStyle="bold|italic"
             android:layout_marginTop="10dp"
             android:text="@string/pelicula" />
 
@@ -37,7 +58,6 @@
             android:layout_below="@id/video"
             android:layout_alignEnd="@id/video"
             android:layout_alignRight="@id/video"
-
 
 
             android:layout_marginStart="80dp"
@@ -61,8 +81,7 @@
                 android:text="@string/stop"
 
 
-                android:textSize="20sp"
-         />
+                android:textSize="20sp" />
 
 
         </LinearLayout>
@@ -74,6 +93,7 @@
             android:layout_below="@id/video"
             android:layout_alignStart="@id/video"
             android:layout_alignLeft="@id/video"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
@@ -101,6 +121,7 @@
             android:layout_alignStart="@id/video"
             android:layout_alignLeft="@id/video"
             android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
             android:orientation="horizontal"
             android:visibility="invisible">
 
